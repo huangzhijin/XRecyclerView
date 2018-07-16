@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context=".ui.apps.qualityMng.QualityEditActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/include_header" />
+
+        <ScrollView
+            android:id="@+id/sv_quality_edit_aty"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/bg_page"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <android.support.v7.widget.CardView
+                    style="@style/FromCardViewStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimen_dp_16">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/dimen_dp_15">
+                        <!--发送给-->
+                        <LinearLayout
+                            android:id="@id/lyt_sendTo_root"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="@dimen/dimen_dp_30"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical"
+                                    android:minWidth="@dimen/dimen_dp_100"
+                                    android:text="@string/txt_sendTo" />
+
+                                <Button
+                                    android:id="@id/btn_add_sendTo"
+                                    android:layout_width="@dimen/dimen_dp_45"
+                                    android:layout_height="@dimen/dimen_dp_30"
+                                    android:background="@drawable/bg_btn_blue_small_3dp"
+                                    android:gravity="center"
+                                    android:padding="0dp"
+                                    android:text="@string/txt_add"
+                                    android:textColor="@color/white" />
+                            </LinearLayout>
+
+
+                            <com.heaven7.android.dragflowlayout.DragFlowLayout
+                                android:id="@id/dfl_sendTo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                            </com.heaven7.android.dragflowlayout.DragFlowLayout>
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dimen_px_1"
+                            android:layout_marginTop="@dimen/dimen_dp_8"
+                            android:background="@color/bg_line_1px_met" />
+                        <!--抄送给-->
+                        <LinearLayout
+                            android:id="@id/lyt_copyTo_root"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dimen_dp_15"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="@dimen/dimen_dp_30"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical"
+                                    android:minWidth="@dimen/dimen_dp_100"
+                                    android:text="@string/txt_copyTo" />
+
+                                <Button
+                                    android:id="@id/btn_add_copyTo"
+                                    android:layout_width="@dimen/dimen_dp_45"
+                                    android:layout_height="@dimen/dimen_dp_30"
+                                    android:background="@drawable/bg_btn_blue_small_3dp"
+                                    android:gravity="center"
+                                    android:padding="0dp"
+                                    android:text="@string/txt_add"
+                                    android:textColor="@color/white" />
+                            </LinearLayout>
+
+                            <com.heaven7.android.dragflowlayout.DragFlowLayout
+                                android:id="@id/dfl_copyTo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                            </com.heaven7.android.dragflowlayout.DragFlowLayout>
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dimen_px_1"
+                            android:layout_marginBottom="@dimen/dimen_dp_8"
+                            android:layout_marginTop="@dimen/dimen_dp_8"
+                            android:background="@color/bg_line_1px_met" />
+
+                        <com.rengwuxian.materialedittext.MaterialEditText
+                            android:id="@+id/met_new_quality_title"
+                            style="@style/MaterialEditTextCommonStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/txt_title_hint"
+                            android:singleLine="false"
+                            app:met_floatingLabelText="@string/txt_title" />
+
+                        <com.rengwuxian.materialedittext.MaterialEditText
+                            android:id="@+id/met_new_quality_time"
+                            style="@style/MaterialEditTextCommonStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
+                            android:hint="@string/txt_new_quality_atime_hint"
+                            android:singleLine="false"
+                            app:met_floatingLabelText="@string/txt_new_quality_atime" />
+
+                        <com.rengwuxian.materialedittext.MaterialEditText
+                            android:id="@+id/met_new_quality_type" android:visibility="gone"
+                            style="@style/MaterialEditTextCommonStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
+                            android:hint="@string/txt_new_quality_type_hint"
+                            android:singleLine="false"
+                            app:met_floatingLabelText="@string/txt_new_quality_type" />
+
+                        <com.rengwuxian.materialedittext.MaterialEditText
+                            android:id="@+id/met_new_quality_guid"
+                            style="@style/MaterialEditTextCommonStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
+                            android:hint="@string/txt_new_quality_guid_hint"
+                            android:singleLine="false"
+                            app:met_floatingLabelText="@string/txt_new_quality_guid" />
+
+                        <!--   app:met_helperText="XXXXX"
+                           app:met_helperTextAlwaysShown="false"
+                           app:met_helperTextColor="@color/form_lable_color"-->
+
+                        <com.rengwuxian.materialedittext.MaterialEditText
+                            android:id="@+id/met_new_quality_section"
+                            style="@style/MaterialEditTextCommonStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
+                            android:hint="@string/txt_new_quality_section"
+                            android:singleLine="false"
+                            app:met_floatingLabelText="@string/txt_new_quality_section"
+                            app:met_helperText="@string/txt_new_quality_sysfill"
+                            app:met_helperTextAlwaysShown="true" />
+
+                        <com.rengwuxian.materialedittext.MaterialEditText
+                            android:id="@+id/met_new_quality_lineMil"
+                            style="@style/MaterialEditTextCommonStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
+                            android:hint="@string/txt_new_quality_linemil"
+                            android:singleLine="false"
+                            app:met_floatingLabelText="@string/txt_new_quality_linemil"
+                            app:met_helperText="@string/txt_new_quality_sysfill"
+                            app:met_helperTextAlwaysShown="true" />
+
+                        <com.rengwuxian.materialedittext.MaterialEditText
+                            android:id="@+id/met_new_quality_modelType"
+                            style="@style/MaterialEditTextCommonStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
+                            android:hint="@string/txt_new_quality_modeltype"
+                            android:singleLine="false"
+                            app:met_floatingLabelText="@string/txt_new_quality_modeltype"
+                            app:met_helperText="@string/txt_new_quality_sysfill"
+                            app:met_helperTextAlwaysShown="true" />
+
+                        <com.rengwuxian.materialedittext.MaterialEditText
+                            android:id="@+id/met_new_quality_level"
+                            style="@style/MaterialEditTextCommonStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
+                            android:hint="@string/txt_new_quality_level_hint"
+                            android:singleLine="false"
+                            app:met_floatingLabelText="@string/txt_new_quality_level" />
+
+                        <com.rengwuxian.materialedittext.MaterialEditText
+                            android:id="@+id/met_new_quality_desc"
+                            style="@style/MaterialEditTextCommonStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/txt_new_quality_level_desc_hint"
+                            android:singleLine="false"
+                            app:met_floatingLabelText="@string/txt_new_quality_level_desc" />
+
+                        <!--附件-->
+                        <LinearLayout
+                            android:id="@id/lyt_efs_root"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="@dimen/dimen_dp_30"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical"
+                                    android:minWidth="@dimen/dimen_dp_100"
+                                    android:text="@string/txt_efs" />
+
+                                <ImageButton
+                                    android:id="@id/btn_add_picture"
+                                    android:layout_width="@dimen/dimen_dp_25"
+                                    android:layout_height="@dimen/dimen_dp_25"
+                                    android:layout_marginRight="@dimen/dimen_dp_10"
+                                    android:background="@drawable/bg_efs_image"
+                                    android:gravity="center"
+                                    android:padding="0dp"
+                                    android:text="@string/txt_picture"
+                                    android:textColor="@color/colorPrimary" />
+
+                                <ImageButton
+                                    android:id="@id/btn_add_video"
+                                    android:layout_width="@dimen/dimen_dp_25"
+                                    android:layout_height="@dimen/dimen_dp_25"
+                                    android:layout_marginRight="@dimen/dimen_dp_10"
+                                    android:background="@drawable/bg_efs_video"
+                                    android:gravity="center"
+                                    android:padding="0dp"
+                                    android:text="@string/txt_videos"
+                                    android:textColor="@color/colorPrimary"
+                                    tools:ignore="ContentDescription" />
+
+                                <ImageButton
+                                    android:id="@id/btn_add_document"
+                                    android:layout_width="@dimen/dimen_dp_25"
+                                    android:layout_height="@dimen/dimen_dp_25"
+                                    android:layout_marginRight="@dimen/dimen_dp_10"
+                                    android:background="@drawable/bg_efs_file"
+                                    android:gravity="center"
+                                    android:padding="0dp"
+                                    android:text="@string/txt_document"
+                                    android:textColor="@color/colorPrimary"
+                                    tools:ignore="ContentDescription" />
+
+                                <CheckBox
+                                    android:id="@id/chb_toggle_grid_linear"
+                                    android:layout_width="@dimen/dimen_dp_25"
+                                    android:layout_height="@dimen/dimen_dp_25"
+                                    android:layout_marginRight="@dimen/dimen_dp_5"
+                                    android:background="@drawable/bg_chb_toggle_grid_linear"
+                                    android:button="@null" />
+                            </LinearLayout>
+
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:descendantFocusability="blocksDescendants">
+                                <android.support.v7.widget.RecyclerView
+                                    android:id="@id/rv_meidaList"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                </android.support.v7.widget.RecyclerView>
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                        <!--<include layout="@layout/include_medialist"/>-->
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <Button
+                    android:id="@+id/btn_save_quality_ques"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimen_dp_16"
+                    android:background="@drawable/btn_common_submit"
+                    android:text="@string/txt_submit"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/dimen_sp_18"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>
